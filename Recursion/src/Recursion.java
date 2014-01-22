@@ -4,7 +4,7 @@ public class Recursion
 
 	public static void main(String[] args) 
 	{
-		recursive.message(5);
+		System.out.print(sum.summation(6));
 	}
 
 }
