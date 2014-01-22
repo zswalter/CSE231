@@ -1,6 +1,6 @@
 
-public class recursive {
-	
+public class recursive 
+{
 	public static void message(int n) 
 	{
 		if (n > 0 )
@@ -9,5 +9,4 @@ public class recursive {
 			message(n-1);
 		}
 	}
-
 }
