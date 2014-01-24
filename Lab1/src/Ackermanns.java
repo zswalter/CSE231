@@ -11,6 +11,7 @@ public class Ackermanns
 
 	public static void main(String[] args) 
 	{
+		//test the recursive method
 		System.out.println(ackermann(0, 0));
 		System.out.println(ackermann(0, 1));
 		System.out.println(ackermann(1, 1));
@@ -23,10 +24,13 @@ public class Ackermanns
 	
 	public static int ackermann(int m, int n)
 	{
+		//if m is 0 then return n + 1
 		if (m == 0)
 			return (n + 1);
+		//if n is 0 run ackermann as m-1, 1 till m is 0
 		else if (n == 0)
 			return ackermann(m -1, 1);
+		//repeat till either m is 0
 		else
 			return ackermann(m-1, ackermann(m, n-1));
 	}
