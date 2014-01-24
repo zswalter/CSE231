@@ -9,7 +9,8 @@ class.
 import java.util.*;
 public class Population 
 {
-
+	//Preconditions org >= 2, growth >= 0, day >= 1
+	//post conditions none
 	public static void main(String[] args) 
     {
         //initialize the user input variables and input reader
@@ -47,6 +48,7 @@ public class Population
         displayPopulation(org, growth, days);
     }
     
+	//Preconditions: none; Postconditions: days == dayNum
     private static void showPopulation(int dayNum, int days, double organisms, double dailyIncrease)
     {
          //if only 1 day just print the day number and the starting organisms
@@ -77,7 +79,7 @@ public class Population
          }
              
     }
-     
+    //Preconditions & Postconditions: none 
     public static void displayPopulation(double startingOrganisms, double increase, int days)
     {	
     	 //initialize the day
