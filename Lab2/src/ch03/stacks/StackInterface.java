@@ -7,14 +7,14 @@
 
 package ch03.stacks;
 
-public interface StackInterface
+public interface StackInterface<T>
 
 {
-  Object pop() throws StackUnderflowException;
+  void pop() throws StackUnderflowException;
   // Throws StackUnderflowException if this stack is empty,
   // otherwise removes top element from this stack.
   
-  Object top() throws StackUnderflowException;
+  T top() throws StackUnderflowException;
   // Throws StackUnderflowException if this stack is empty,
   // otherwise returns top element from this stack.
   

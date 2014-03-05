@@ -11,23 +11,23 @@
 
 package ch03.stacks;
 
-public class ArrayStack implements BoundedStackInterface 
+public class ArrayStack<T> implements BoundedStackInterface<T> 
 {
-  private final int DEFCAP = 100; // default capacity
-  private Object [] stack;              // holds stack elements
+  protected final int DEFCAP = 100; // default capacity
+  protected T[] stack;              // holds stack elements
   protected int topIndex = -1;      // index of top element in stack
 
   public ArrayStack() 
   {
-    stack = new Object[DEFCAP];
+    stack = (T[]) new Object[DEFCAP];
   }
 
   public ArrayStack(int maxSize) 
   {
-    stack =  new Object[maxSize];
+    stack = (T[]) new Object[maxSize];
   }
 
-  public void push(Object element)
+  public void push(T element)
   // Throws StackOverflowException if this stack is full,
   // otherwise places element at the top of this stack.
   {      
@@ -40,26 +40,24 @@ public class ArrayStack implements BoundedStackInterface
       throw new StackOverflowException("Push attempted on a full stack.");
   }
 
-  public Object pop()
+  public void pop()
   // Throws StackUnderflowException if this stack is empty,
   // otherwise removes top element from this stack.
-  {  Object result;                
+  {                  
     if (!isEmpty())
     {
-      result=stack[topIndex];
       stack[topIndex] = null;
       topIndex--;
-      return result;
     }
     else
       throw new StackUnderflowException("Pop attempted on an empty stack.");
   }
 
-  public Object top()
+  public T top()
   // Throws StackUnderflowException if this stack is empty,
   // otherwise returns top element from this stack.
   {                 
-    Object topOfStack = null;
+    T topOfStack = null;
     if (!isEmpty())
       topOfStack = stack[topIndex];
     else
@@ -84,14 +82,4 @@ public class ArrayStack implements BoundedStackInterface
     else
       return false;
   }
-  
-  public String toString()
-   {
-      String result = "";
-
-      for (int scan=0; scan <= topIndex; scan++)
-         result = result + stack[scan].toString() + "\n";
-
-      return result;
-   }
 }

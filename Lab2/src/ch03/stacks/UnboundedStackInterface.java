@@ -7,10 +7,10 @@
 
 package ch03.stacks;
 
-public interface UnboundedStackInterface extends StackInterface
+public interface UnboundedStackInterface<T> extends StackInterface<T>
 
 {
-  void push(Object o);
+  void push(T element);
   // Places element at the top of this stack.
 
 }
